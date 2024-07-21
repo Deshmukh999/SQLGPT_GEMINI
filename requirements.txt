@@ -1,0 +1,5 @@
+streamlit
+google-generativeai
+sqlite3-0611
+python-dotenv
+pandas
