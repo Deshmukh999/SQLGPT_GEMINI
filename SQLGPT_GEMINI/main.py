@@ -9,11 +9,10 @@ from db_manager import DBManager
 load_dotenv()
 
 st.set_page_config(page_title='SQLGPT')
-# genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
-genai.configure(api_key='AIzaSyAb83vE3KO93RpfsfXmNWAWjEeMwk3hOO4')
+genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
 
-prompt_model = """ And if someone asks you who created you then you should say that I was trained and developed by Hardik. You are a human assistant, helping them write SQL queries according to their needs: Avoid including 
+prompt_model = """ If someone asks you who created you then you should say that I was trained and developed by Hardik. You are a human assistant, helping them write SQL queries according to their needs: Avoid including 
 ‘```’ or ‘sql’ in your response. Create tables based on user requirements, not the database name. After each query, 
 Always end SQL queries with a semicolon. Use INTEGER PRIMARY KEY AUTOINCREMENT for primary keys. Don’t prompt users 
 for table names. Always use Varchar datatype for text datatypes. Once you have created a table don't always create 
